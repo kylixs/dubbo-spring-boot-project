@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: test
         run: |
-          echo "Exception in thread: connection failure"
+          >&2 echo "ERROR: connection failure"
           exit 1
   build:
 
