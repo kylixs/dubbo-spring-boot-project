@@ -16,30 +16,33 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        include:
-          - dubbo: 2.7.8
-            spring_version: 4.3.16.RELEASE
-          - dubbo: 2.7.8
-            spring_version: 5.3.2
-          - dubbo: 3.0
-            spring_version: 4.3.16.RELEASE
-          - dubbo: 3.0
-            spring_version: 5.3.2
-          - dubbo: 2.7.8
-            spring-boot.version: 1.5.22.RELEASE
-          - dubbo: 2.7.8
-            spring-boot.version: 2.1.18.RELEASE            
-          - dubbo: 3.0
-            spring-boot.version: 1.5.22.RELEASE
-          - dubbo: 3.0
-            spring-boot.version: 2.1.18.RELEASE            
+        dubbo: [2.7.8, 3.0]
+        spring: [spring.version:4.3.16.RELEASE, spring.version:5.3.2, spring-boot.version:1.5.22.RELEASE, spring-boot.version:2.1.18.RELEASE]
+#         include:
+#           - dubbo: 2.7.8
+#             spring_version: 4.3.16.RELEASE
+#           - dubbo: 2.7.8
+#             spring_version: 5.3.2
+#           - dubbo: 3.0
+#             spring_version: 4.3.16.RELEASE
+#           - dubbo: 3.0
+#             spring_version: 5.3.2
+#           - dubbo: 2.7.8
+#             spring-boot.version: 1.5.22.RELEASE
+#           - dubbo: 2.7.8
+#             spring-boot.version: 2.1.18.RELEASE            
+#           - dubbo: 3.0
+#             spring-boot.version: 1.5.22.RELEASE
+#           - dubbo: 3.0
+#             spring-boot.version: 2.1.18.RELEASE            
             
     steps:
       - name: test
         run: |
           echo "dubbo: ${{ matrix.dubbo }}"
-          echo "spring.version: ${{ matrix.spring_version }}"
-          echo "spring-boot.version: ${{ matrix['spring-boot.version'] }}"
+          echo "spring: ${{ matrix.spring }}"
+          #echo "spring.version: ${{ matrix.spring_version }}"
+          #echo "spring-boot.version: ${{ matrix['spring-boot.version'] }}"
 #   build:
 #     runs-on: ubuntu-latest
 #     steps:
