@@ -13,15 +13,22 @@ on:
 
 jobs:
   test:
-    runs-on: ${{matrix.os}}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [6, 8, 10]
-        os: [ubuntu-16.04, ubuntu-18.04]
+        dubbo: [2.7.8, 3.0]
+        include:
+          - spring.version: 4.3.16.RELEASE
+          - spring.version: 5.3.2
+          - spring-boot.version: 1.5.22.RELEASE
+          - spring-boot.version: 2.1.18.RELEASE            
+            
     steps:
       - name: test
         run: |
-          echo "node: ${{ matrix.node }}"
+          echo "dubbo: ${{ matrix.dubbo }}"
+          echo "spring.version: ${{ matrix.spring.version }}"
+          echo "spring-boot.version: ${{ matrix.spring-boot.version }}"
 #   build:
 #     runs-on: ubuntu-latest
 #     steps:
