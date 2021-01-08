@@ -28,7 +28,7 @@ jobs:
         run: |
           echo "dubbo: ${{ matrix.dubbo }}"
           echo "spring.version: ${{ matrix.spring_version }}"
-          echo "spring-boot.version: ${{ matrix[spring-boot.version] }}"
+          echo "spring-boot.version: ${{ matrix['spring-boot.version'] }}"
 #   build:
 #     runs-on: ubuntu-latest
 #     steps:
