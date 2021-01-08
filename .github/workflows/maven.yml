@@ -16,12 +16,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dubbo: [2.7.8, 3.0]
         include:
-          - spring_version: 4.3.16.RELEASE
-          - spring_version: 5.3.2
-          - spring-boot.version: 1.5.22.RELEASE
-          - spring-boot.version: 2.1.18.RELEASE            
+          - dubbo: 2.7.8
+            spring_version: 4.3.16.RELEASE
+          - dubbo: 2.7.8
+            spring_version: 5.3.2
+          - dubbo: 3.0
+            spring_version: 4.3.16.RELEASE
+          - dubbo: 3.0
+            spring_version: 5.3.2
+          - dubbo: 2.7.8
+            spring-boot.version: 1.5.22.RELEASE
+          - dubbo: 2.7.8
+            spring-boot.version: 2.1.18.RELEASE            
+          - dubbo: 3.0
+            spring-boot.version: 1.5.22.RELEASE
+          - dubbo: 3.0
+            spring-boot.version: 2.1.18.RELEASE            
             
     steps:
       - name: test
