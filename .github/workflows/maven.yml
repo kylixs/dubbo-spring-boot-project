@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: ${{fromJson(env.JAVA_VERS)}}
+        java: ${{fromJson("${{env.JAVA_VERS}}")}}
         dubbo: [2.7.8, 3.0]
     steps:
       - name: test
