@@ -12,14 +12,14 @@ on:
     branches: [ master ]
 
 env:
-  JAVA_VERS: '[8, 11]'
+  JAVA_VERS: '8  11'
   
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: ${{fromJson("${{env.JAVA_VERS}}")}}
+        java: ${{ env.JAVA_VERS }}
         dubbo: [2.7.8, 3.0]
     steps:
       - name: test
